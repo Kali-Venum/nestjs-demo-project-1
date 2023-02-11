@@ -4,11 +4,14 @@ import { UserModule } from './app/user/user.module';
 
 // Entity.
 import { User } from './app/user/entity/user.entity';
-import { AuthController } from './app/auth/auth.controller';
+
+// Module.
+import { AuthModule } from './app/auth/auth.module';
 
 @Module({
   imports: [
     UserModule,
+    AuthModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -20,6 +23,5 @@ import { AuthController } from './app/auth/auth.controller';
       synchronize: true,
     }),
   ],
-  controllers: [AuthController],
 })
 export class AppModule {}
