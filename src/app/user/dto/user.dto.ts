@@ -6,12 +6,15 @@ export class CreateUserDTO {
 
   @IsEmail()
   email: string;
+
+  @IsString()
+  password: string;
 }
 
 export class UpdateUserDTO {
   @IsString()
   name: string;
 
-  @IsEmail()
-  email: string;
+  @IsString()
+  password: string;
 }
